@@ -4,7 +4,7 @@ kind: Ingress
 metadata:
   name: helloworld-rules
   annotations:
-    ingress.kubernetes.io/ssl-redirect: "true"
+    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
   - host: helloworld-v1.kubernetes.howejones.xyz

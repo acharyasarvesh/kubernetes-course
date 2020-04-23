@@ -9,8 +9,11 @@ metadata:
     service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: '*'
     # Increase the ELB idle timeout to avoid issues with WebSockets or Server-Sent Events.
     service.beta.kubernetes.io/aws-load-balancer-connection-idle-timeout: '3600'
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: 'arn:aws:acm:eu-west-1:458122280773:certificate/f89e0bb3-dbfc-4301-8426-d5df450684a9'
+#    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+
     # external-dns
-    external-dns.alpha.kubernetes.io/hostname: ingress.kubernetes.newtech.academy
+    external-dns.alpha.kubernetes.io/hostname: ingress.kubernetes.howejones.xyz
 spec:
   type: LoadBalancer
   selector:
@@ -21,7 +24,7 @@ spec:
     targetPort: http
   - name: https
     port: 443
-    targetPort: https
+    targetPort: http
 ---
 kind: ConfigMap
 apiVersion: v1

@@ -8,17 +8,17 @@ spec:
   kubeAPIServer:
     enableAdmissionPlugins:
     - Initializers
-    - NamespaceLifecycle
-    - LimitRanger
-    - ServiceAccount
+    - NamespaceLifecycle # yes
+    - LimitRanger # yes
+    - ServiceAccount # yes
     - PersistentVolumeLabel
-    - DefaultStorageClass
-    - DefaultTolerationSeconds
-    - MutatingAdmissionWebhook
-    - ValidatingAdmissionWebhook
-    - NodeRestriction
-    - ResourceQuota
-    - PodPreset
+    - DefaultStorageClass # yes
+    - DefaultTolerationSeconds # yes
+    - MutatingAdmissionWebhook # yes
+    - ValidatingAdmissionWebhook # yes
+    - NodeRestriction # yes
+    - ResourceQuota # yes
+    - PodPreset # yes
     runtimeConfig:
       settings.k8s.io/v1alpha1: "true"
 
